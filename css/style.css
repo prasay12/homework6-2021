@@ -61,9 +61,12 @@ header {
 
 }
 
+/* larger screen */ 
+
 @media screen and (min-width:850px) {
     body>header {
         flex-direction: row;
+        position: -webkit-sticky;
         position: sticky;
         top: 0;
         left: 0;
@@ -80,6 +83,8 @@ header {
         flex-basis: 250px;
     }
 }
+
+/* animation */ 
 
 #logo {
     animation-name: logo;
@@ -98,44 +103,8 @@ header {
     }
 }
 
-@media screen and (min-width: 850px){
 
-    body > header {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-
-    }
-
-
-    .nav_links{
-        display: flex;
-        flex-direction: row;
-    }
-
-    nav{
-        justify-self: flex-end;
-    }
-    .pricing{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .card{
-         
-        flex-basis: 250px;
-    
-    }
-   
-
-}
+/* larger print view */ 
 
 @media print{
     body {
@@ -152,9 +121,10 @@ header {
     }
     .pricing {
         display: flex;
-        flex-flow: row;
-        align-items: baseline;
-        justify-content: center
+        flex-flow: row nowrap;;
+        align-items: flex-end;
+        justify-content: center;
+
     }
 
     .card>ul>li::before{
@@ -167,5 +137,30 @@ header {
 
     #gallery, .gallery{
         display: none;
+    }
+
+    .pricing li:nth-child(even):after{
+        content: "\1F44D";
+    }
+
+    .pricing li:nth-child(odd):before{
+        content: "\1F44D";
+    }
+
+}
+
+/* Reduced Motion */ 
+
+@media (prefers-reduced-motion) {
+    @keyframes logo {
+        0% {
+            width: 425px;
+            opacity: 0;
+
+        }
+        100% {
+            width: 425px;
+            opacity: 100;
+        }
     }
 }
