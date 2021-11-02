@@ -139,14 +139,6 @@ header {
         display: none;
     }
 
-    .pricing li:nth-child(even):after{
-        content: "\1F44D";
-    }
-
-    .pricing li:nth-child(odd):before{
-        content: "\1F44D";
-    }
-
 }
 
 /* Reduced Motion */ 
